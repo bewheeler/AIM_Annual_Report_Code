@@ -1,3 +1,6 @@
+#Thisexample uses SLVFO data. Strata include basalt hills (BH), limy bench (LB), loamy (LO), mountain outwash (MO), other (OT), 
+#rocky foothills (ROF), salty (SAL), sandy (SAN) and forest (FORE)
+
 #packages installed= data.table, dplyr, formattable, tidyr using function install.packages("")
 library(tidyr)
 library(ggplot2)
