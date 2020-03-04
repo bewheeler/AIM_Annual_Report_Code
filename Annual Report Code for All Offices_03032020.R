@@ -35,7 +35,7 @@ STN$Actual.Eco.Site<-Plotdata$Actual.Eco.Site[match(STN$PrimaryKey,Plotdata$Prim
 #which can be done using ctrl + f , replace all 
 #summary section (collaborates all strata)
 #native vs nonnative
-target<-c("BH","FORE","LB","LOA","MO","OTH","ROF","SAL","SAN")
+target<-c("BH","LB","LOA","MO","OTH","ROF","SAL","SAN","FORE")
 AIMdata1<-AIMdata%>%
   select(Noxious.Cover.Pct.Any.Hit,NonNoxious.Plant.Cover.Pct.Any.Hit,Actual.Eco.Site) %>%
   filter(Actual.Eco.Site %in% target)
