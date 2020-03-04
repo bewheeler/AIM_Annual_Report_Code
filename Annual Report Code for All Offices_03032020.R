@@ -1254,7 +1254,7 @@ domgrasssd<-c(round(sd(BHA$Species=="BOGR2", na.rm=TRUE), digits=2),round(sd(BHA
 domherbsd<-"N/A"
 domwoodsd<-c(round(sd(BHA$Species=="ARTRV", na.rm=TRUE), digits=2),round(sd(BHA$Species=="PIED", na.rm=TRUE), digits=2))
 
-domgrassCI<-c(round((1.282*(sd(BHA$Species=="BOGR2", na.rm=TRUE)/BHN2)),digits = 2) , round((1.282*(sd(BHA$Species=="HECO26", na.rm=TRUE)/BHN2)),digits=2), round((1.282*(sd(BHA$Species=="AGCR", na.rm=TRUE)/BHN2)),digits=2))
+domgrassCI<-c(round((1.282*(sd(BHA$Species=="BOGR2", na.rm=TRUE)/BHN2)),digits = 2) , round((1.282*(sd(BHA$Species=="HECO26", na.rm=TRUE)/BHN2)),digits=2))
 domherbCI<-"N/A"
 domwoodCI<-c(round((1.282*(sd(BHA$Species=="ARTRV", na.rm=TRUE)/BHN2)),digits=2))
 
