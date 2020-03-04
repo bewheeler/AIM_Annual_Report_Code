@@ -1223,6 +1223,7 @@ FORES<-FOREST %>%
 
 #BH
 #replace your dominant species codes (determined in a previous step) in the below code
+#if no species present for the dominant species group, change to "N/A" as seen following Dom. Herb. Cover (%)
 Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
