@@ -23,9 +23,9 @@ PSPSdata<-read.csv("~/PSPPALL.csv")
 PSPSdata$Actual.Eco.Site<-Plotdata$Actual.Eco.Site[match(PSPSdata$PrimaryKey,Plotdata$PrimaryKey)]
 SPdata<-read.csv("~/Allyears_species_rich.csv")
 SPdata$Actual.Eco.Site<-Plotdata$Actual.Eco.Site[match(SPdata$PrimaryKey,Plotdata$PrimaryKey)]
-ST<-read.csv("~/LPI_all.csv")
 #when downloading LPI detail from TerrADat online you will have to label the PrimaryKey column PrimaryKey, you can use the View()
 ##command to ensure you're matching with the correct column
+ST<-read.csv("~/LPI_all.csv")
 ST<-ST %>%
   select(HeightWoody,HeightHerbaceous,SpeciesWoody,SpeciesHerbaceous,PrimaryKey)
 STN<-na.omit(ST)
