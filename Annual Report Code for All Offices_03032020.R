@@ -74,55 +74,55 @@ ROF<-subset(Plotdata,Actual.Eco.Site=="ROF")
 SAL<-subset(Plotdata,Actual.Eco.Site=="SAL")
 SAN<-subset(Plotdata,Actual.Eco.Site=="SAN")
 FORE<-subset(Plotdata,Actual.Eco.Site=="FORE")
-
+#
 summary(BH$AvgPrecip)
 summary(BH$Slope)
 summary(BH$Elevation)
 summary(BH$EcolSite)
 summary(BH$LandscapeType)
-
+#
 summary(LB$AvgPrecip)
 summary(LB$Slope)
 summary(LB$Elevation)
 summary(LB$EcolSite)
 summary(LB$LandscapeType)
-
+#
 summary(LOA$AvgPrecip)
 summary(LOA$Slope)
 summary(LOA$Elevation)
 summary(LOA$EcolSite)
 summary(LOA$LandscapeType)
-
+#
 summary(MO$AvgPrecip)
 summary(MO$Slope)
 summary(MO$Elevation)
 summary(MO$EcolSite)
 summary(MO$LandscapeType)
-
+#
 summary(OTH$AvgPrecip)
 summary(OTH$Slope)
 summary(OTH$Elevation)
 summary(OTH$EcolSite)
 summary(OTH$LandscapeType)
-
+#
 summary(ROF$AvgPrecip)
 summary(ROF$Slope)
 summary(ROF$Elevation)
 summary(ROF$EcolSite)
 summary(ROF$LandscapeType)
-
+#
 summary(SAL$AvgPrecip)
 summary(SAL$Slope)
 summary(SAL$Elevation)
 summary(SAL$EcolSite)
 summary(SAL$LandscapeType)
-
+#
 summary(SAN$AvgPrecip)
 summary(SAN$Slope)
 summary(SAN$Elevation)
 summary(SAN$EcolSite)
 summary(SAN$LandscapeType)
-
+#
 summary(FORE$AvgPrecip)
 summary(FORE$Slope)
 summary(FORE$Elevation)
@@ -139,47 +139,47 @@ ROF<-subset(soildata,Actual.Eco.Site=="ROF")
 SAL<-subset(soildata,Actual.Eco.Site=="SAL")
 SAN<-subset(soildata,Actual.Eco.Site=="SAN")
 FORE<-subset(soildata,Actual.Eco.Site=="FORE")
-
+#
 summary(BH$Texture)
 summary(BH$RockFragments)
 summary(BH$Effer)
 summary(BH$ESD_PctClay)
-
+#
 summary(LB$Texture)
 summary(LB$RockFragments)
 summary(LB$Effer)
 summary(LB$ESD_PctClay)
-
+#
 summary(LOA$Texture)
 summary(LOA$RockFragments)
 summary(LOA$Effer)
 summary(LOA$ESD_PctClay)
-
+#
 summary(MO$Texture)
 summary(MO$RockFragments)
 summary(MO$Effer)
 summary(MO$ESD_PctClay)
-
+#
 summary(OTH$Texture)
 summary(OTH$RockFragments)
 summary(OTH$Effer)
 summary(OTH$ESD_PctClay)
-
+#
 summary(ROF$Texture)
 summary(ROF$RockFragments)
 summary(ROF$Effer)
 summary(ROF$ESD_PctClay)
-
+#
 summary(SAL$Texture)
 summary(SAL$RockFragments)
 summary(SAL$Effer)
 summary(SAL$ESD_PctClay)
-
+#
 summary(SAN$Texture)
 summary(SAN$RockFragments)
 summary(SAN$Effer)
 summary(SAN$ESD_PctClay)
-
+#
 summary(FORE$Texture)
 summary(FORE$RockFragments)
 summary(FORE$Effer)
@@ -1034,31 +1034,31 @@ ROFG<-subset(Gapdata,Actual.Eco.Site=="ROF")
 SALG<-subset(Gapdata,Actual.Eco.Site=="SAL")
 SANG<-subset(Gapdata,Actual.Eco.Site=="SAN")
 FOREG<-subset(Gapdata,Actual.Eco.Site=="FORE")
-
+#
 summary(BHG$Gaps)
 summary(BHG$CanopyCover)
-
+#
 summary(LBG$Gaps)
 summary(LBG$CanopyCover)
-
+#
 summary(LOAG$Gaps)
 summary(LOAG$CanopyCover)
-
+#
 summary(MOG$Gaps)
 summary(MOG$CanopyCover)
-
+#
 summary(OTHG$Gaps)
 summary(OTHG$CanopyCover)
-
+#
 summary(ROFG$Gaps)
 summary(ROFG$CanopyCover)
-
+#
 summary(SALG$Gaps)
 summary(SALG$CanopyCover)
-
+#
 summary(SANG$Gaps)
 summary(SANG$CanopyCover)
-
+#
 summary(FOREG$Gaps)
 summary(FOREG$CanopyCover)
 
@@ -1088,47 +1088,47 @@ ROFpop<-paste("ROF Proportion Canopy Gap and Cover   n=",ROFN2)
 SALpop<-paste("SAL Proportion Canopy Gap and Cover   n=",SALN2)
 SANpop<-paste("SAN Proportion Canopy Gap and Cover   n=",SANN2)
 FOREpop<-paste("FORE Proportion Canopy Gap and Cover   n=",FOREN2)
-
+#
 GC<-ggplot(BHG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(BHpop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
 GC3+theme(axis.title.y = element_blank())+labs(y="Percent of Plot")+scale_y_continuous(labels=scales::percent)
-
+#
 GC<-ggplot(LBG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(LBpop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
 GC3+theme(axis.title.y = element_blank())+labs(y="Percent of Plot")+scale_y_continuous(labels=scales::percent)
-
+#
 GC<-ggplot(LOAG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(LOApop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
 GC3+theme(axis.title.y = element_blank())+labs(y="Percent of Plot")+scale_y_continuous(labels=scales::percent)
-
+#
 GC<-ggplot(MOG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(MOpop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
 GC3+theme(axis.title.y = element_blank())+labs(y="Percent of Plot")+scale_y_continuous(labels=scales::percent)
-
+#
 GC<-ggplot(OTHG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(OTHpop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
 GC3+theme(axis.title.y = element_blank())+labs(y="Percent of Plot")+scale_y_continuous(labels=scales::percent)
-
+#
 GC<-ggplot(ROFG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(ROFpop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
 GC3+theme(axis.title.y = element_blank())+labs(y="Percent of Plot")+scale_y_continuous(labels=scales::percent)
-
+#
 GC<-ggplot(SALG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(SALpop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
 GC3+theme(axis.title.y = element_blank())+labs(y="Percent of Plot")+scale_y_continuous(labels=scales::percent)
-
+#
 GC<-ggplot(SANG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(SANpop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
 GC3+theme(axis.title.y = element_blank())+labs(y="Percent of Plot")+scale_y_continuous(labels=scales::percent)
-
+#
 GC<-ggplot(FOREG2,aes(x="",y=Percentofplot,fill=Gapsize))
 GC2<-GC+geom_bar(width=0.5,position="fill", stat = "identity")+ggtitle(paste0(FOREpop))+coord_flip()
 GC3<-GC2+scale_fill_manual(values=c("cadetblue3", "khaki1","sienna1","firebrick3","firebrick4"),labels=c("Canopy Cover (No Gap)","25-50 (cm)","51-100 (cm)", "101-200 (cm)", "200+ (cm)")) 
