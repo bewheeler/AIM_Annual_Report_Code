@@ -1186,7 +1186,7 @@ LBT<-LBST %>%
   filter(GrowthHabitsub=="Tree")
 LBS<-LBST %>%
   filter(GrowthHabitsub=="Shrub")
-LOAT<-LOST %>% 
+LOAT<-LOAST %>% 
   filter(GrowthHabitsub=="Tree")
 LOAS<-LOAST %>%
   filter(GrowthHabitsub=="Shrub")
