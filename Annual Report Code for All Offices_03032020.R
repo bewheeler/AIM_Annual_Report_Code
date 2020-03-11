@@ -8,6 +8,7 @@ library(qwraps2)
 
 
 #Actual.Eco.Site is a column I added to each TerrADat csv to assign the ecological site
+#everything was downloaded from TerrADat
 #CSVs have to be saved as CSV with the names as follows: plots = "Allyears_plots" , soil horizon = "Allyears_soilhorizons"
 #query results = "Allyears_query", plant specis = "PSPPALL" , species richness = "Allyears_species_rich"
 #LPI detail = "LPI_all"
