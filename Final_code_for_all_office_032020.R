@@ -63,6 +63,42 @@ G2<-G+geom_boxplot()
 G3<-G2+ggtitle(" Percent Cover of Annual and Perennial Grass")+labs(x="Duration",y="Average Percent Cover",colour="Duration")+scale_x_discrete(labels= Covers)
 G3+facet_wrap(.~Actual.Eco.Site, ncol=3)+theme(axis.text.x=element_text(colour="gray20",angle = 45, hjust=1))+ scale_color_manual(values=c("paleturquoise3", "rosybrown3"),labels = c("Perennial", "Annual"))
 
+#surface cover
+AIMdata$shrub.subshrub<-AIMdata$Shrub.Cover.Pct.Any.Hit+AIMdata$Noxious.SubShrub.Cover.Pct.Any.Hit+AIMdata$NonNoxious.SubShrub.Cover.Pct.Any.Hit
+AIMdata$succulent<-AIMdata$Noxious.Succulent.Cover.Pct.Any.Hit+AIMdata$NonNoxious.Succulent.Cover.Pct.Any.Hit
+AIMdata$tree<-AIMdata$Noxious.Tree.Cover.Pct.Any.Hit+AIMdata$NonNoxious.Tree.Cover.Pct.Any.Hit
+AIMdata$noxiousforb<-AIMdata$Noxious.Annual.Forb.Cover.Pct.Any.Hit+AIMdata$Noxious.Perennial.Forb.Cover.Pct.Any.Hit
+AIMdata$nonnoxiousforb<-AIMdata$NonNoxious.Annual.Forb.Cover.Pct.Any.Hit+AIMdata$NonNoxious.Perennial.Forb.Cover.Pct.Any.Hit
+
+#calculating Population Size, will be used throughout the entire script
+BH<-subset(AIMdata,Actual.Eco.Site=="BH")
+LB<-subset(AIMdata,Actual.Eco.Site=="LB")
+LOA<-subset(AIMdata,Actual.Eco.Site=="LOA")
+MO<-subset(AIMdata,Actual.Eco.Site=="MO")
+OTH<-subset(AIMdata,Actual.Eco.Site=="OTH")
+ROF<-subset(AIMdata,Actual.Eco.Site=="ROF")
+SAL<-subset(AIMdata,Actual.Eco.Site=="SAL")
+SAN<-subset(AIMdata,Actual.Eco.Site=="SAN")
+FORE<-subset(AIMdata,Actual.Eco.Site=="FORE")
+
+BHN<-count(BH,Primary.Key)
+BHN2<-sum(BHN$n)
+LBN<-count(LB,Primary.Key)
+LBN2<-sum(LBN$n)
+LOAN<-count(LOA,Primary.Key)
+LOAN2<-sum(LOAN$n)
+MON<-count(MO,Primary.Key)
+MON2<-sum(MON$n)
+OTHN<-count(OTH,Primary.Key)
+OTHN2<-sum(OTHN$n)
+ROFN<-count(ROF,Primary.Key)
+ROFN2<-sum(ROFN$n)
+SALN<-count(SAL,Primary.Key)
+SALN2<-sum(SALN$n)
+SANN<-count(SAN,Primary.Key)
+SANN2<-sum(SANN$n)
+FOREN<-count(FORE,Primary.Key)
+FOREN2<-sum(FOREN$n)
 
 #stratum description, general using TerrADat form "Plots"
 BH<-subset(Plotdata,Actual.Eco.Site=="BH")
@@ -319,45 +355,7 @@ blank_bold<-formatter("span",
 formattable(FOREdataframe, list(
   Type = blank_bold))
 
-#surface cover
-AIMdata$shrub.subshrub<-AIMdata$Shrub.Cover.Pct.Any.Hit+AIMdata$Noxious.SubShrub.Cover.Pct.Any.Hit+AIMdata$NonNoxious.SubShrub.Cover.Pct.Any.Hit
-AIMdata$succulent<-AIMdata$Noxious.Succulent.Cover.Pct.Any.Hit+AIMdata$NonNoxious.Succulent.Cover.Pct.Any.Hit
-AIMdata$tree<-AIMdata$Noxious.Tree.Cover.Pct.Any.Hit+AIMdata$NonNoxious.Tree.Cover.Pct.Any.Hit
-AIMdata$noxiousforb<-AIMdata$Noxious.Annual.Forb.Cover.Pct.Any.Hit+AIMdata$Noxious.Perennial.Forb.Cover.Pct.Any.Hit
-AIMdata$nonnoxiousforb<-AIMdata$NonNoxious.Annual.Forb.Cover.Pct.Any.Hit+AIMdata$NonNoxious.Perennial.Forb.Cover.Pct.Any.Hit
-
-#calculating Population Size, will be used throughout the entire script
-BH<-subset(AIMdata,Actual.Eco.Site=="BH")
-LB<-subset(AIMdata,Actual.Eco.Site=="LB")
-LOA<-subset(AIMdata,Actual.Eco.Site=="LOA")
-MO<-subset(AIMdata,Actual.Eco.Site=="MO")
-OTH<-subset(AIMdata,Actual.Eco.Site=="OTH")
-ROF<-subset(AIMdata,Actual.Eco.Site=="ROF")
-SAL<-subset(AIMdata,Actual.Eco.Site=="SAL")
-SAN<-subset(AIMdata,Actual.Eco.Site=="SAN")
-FORE<-subset(AIMdata,Actual.Eco.Site=="FORE")
-
-BHN<-count(BH,Primary.Key)
-BHN2<-sum(BHN$n)
-LBN<-count(LB,Primary.Key)
-LBN2<-sum(LBN$n)
-LOAN<-count(LOA,Primary.Key)
-LOAN2<-sum(LOAN$n)
-MON<-count(MO,Primary.Key)
-MON2<-sum(MON$n)
-OTHN<-count(OTH,Primary.Key)
-OTHN2<-sum(OTHN$n)
-ROFN<-count(ROF,Primary.Key)
-ROFN2<-sum(ROFN$n)
-SALN<-count(SAL,Primary.Key)
-SALN2<-sum(SALN$n)
-SANN<-count(SAN,Primary.Key)
-SANN2<-sum(SANN$n)
-FOREN<-count(FORE,Primary.Key)
-FOREN2<-sum(FOREN$n)
-
-
-#continuing with calculating surface cover
+#calculating surface cover
 
 AIMdata1<-AIMdata %>%
   select(Bare.Soil.Pct,Forb.Cover.Pct.Any.Hit,Grass.Cover.Pct.Any.Hit,Total.Litter.Cover.Pct.First.Hit,Rock.Cover.Pct.First.Hit,shrub.subshrub,succulent,tree,Foliar.Cover.Pct,Actual.Eco.Site)
