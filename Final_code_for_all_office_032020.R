@@ -1221,7 +1221,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","BOGR2","HECO26",
+             "Dominant Graminoid Cover (%)","BOGR2","HECO26",
              "Dominant Herb. Cover (%)", "NA",
              "Dominant Woody Cover (%)","KRLA2","PIED",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -1305,7 +1305,7 @@ BHdataframe<-data.frame(Indicator,Mean,Minimum,Maximum,St.Dev.,ME)
 BHdataframe<-BHdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>% 
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
@@ -1322,7 +1322,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","BOGR2","PASM",
+             "Dominant Graminoid Cover (%)","BOGR2","PASM",
              "Dominant Herb. Cover (%)", "SATR12",
              "Dominant Woody Cover (%)","KRLA2",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -1405,7 +1405,7 @@ LBdataframe<-LBdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>%
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
 
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
@@ -1422,7 +1422,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","BOGR2",
+             "Dominant Graminoid Cover (%)","BOGR2",
              "Dominant Herb. Cover (%)", "MUMO","MUTO2",
              "Dominant Woody Cover (%)","PIED",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -1505,7 +1505,7 @@ LOAdataframe<-LOAdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>%
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
 
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
@@ -1522,7 +1522,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","BOGR2","HECO26","PASM",
+             "Dominant Graminoid Cover (%)","BOGR2","HECO26","PASM",
              "Dominant Herb. Cover (%)", "NA",
              "Dominant Woody Cover (%)","CHGR6",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -1604,7 +1604,7 @@ MOdataframe<-MOdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>%
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
 
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
@@ -1620,7 +1620,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","HECO26","PIMI",
+             "Dominant Graminoid Cover (%)","HECO26","PIMI",
              "Dominant Herb. Cover (%)", "MUMO",
              "Dominant Woody Cover (%)","PIED",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -1701,7 +1701,7 @@ OTHdataframe<-data.frame(Indicator,Mean,Minimum,Maximum,St.Dev.,ME)
 OTHdataframe<-OTHdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>% 
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
@@ -1717,7 +1717,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","HECO26","BOGR2",
+             "Dominant Graminoid Cover (%)","HECO26","BOGR2",
              "Dominant Herb. Cover (%)", "NA",
              "Dominant Woody Cover (%)","PIED","JUMO",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -1798,7 +1798,7 @@ ROFdataframe<-data.frame(Indicator,Mean,Minimum,Maximum,St.Dev.,ME)
 ROFdataframe<-ROFdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>% 
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
@@ -1814,7 +1814,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","DISP",
+             "Dominant Graminoid Cover (%)","DISP",
              "Dominant Herb. Cover (%)", "ERCE2",
              "Dominant Woody Cover (%)","SAVE4",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -1893,7 +1893,7 @@ SALdataframe<-data.frame(Indicator,Mean,Minimum,Maximum,St.Dev.,ME)
 SALdataframe<-SALdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>% 
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
@@ -1909,7 +1909,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","BOGR2","DISP","ACHY","SPCR",
+             "Dominant Graminoid Cover (%)","BOGR2","DISP","ACHY","SPCR",
              "Dominant Herb. Cover (%)", "NA",
              "Dominant Woody Cover (%)","NA",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -1990,7 +1990,7 @@ SANdataframe<-data.frame(Indicator,Mean,Minimum,Maximum,St.Dev.,ME)
 SANdataframe<-SANdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>% 
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
@@ -2006,7 +2006,7 @@ Indicator<-c("Surface Indicator (%)","Rock Fragment", "Litter","Bare Soil",
              "Foliar Cover (%)","Shrub/Sub-shrub","Grass","Succulent",
              "Tree","Noxious Forb/Herb","Nonnoxious Forb/Herb","Vegetation Height (cm)",
              "Grass","Forb/Herb","Tree", "Shrub",
-             "Dominant Grass Cover (%)","FEAR2",
+             "Dominant Graminoid Cover (%)","FEAR2",
              "Dominant Herb. Cover (%)", "NA",
              "Dominant Woody Cover (%)","PIFL2","PIED","PSME",
              "Canopy Gaps (%)", "Gaps 25-50 cm", "Gaps 51-100 cm",
@@ -2087,7 +2087,7 @@ FOREdataframe<-data.frame(Indicator,Mean,Minimum,Maximum,St.Dev.,ME)
 FOREdataframe<-FOREdataframe %>% mutate_if(is.factor, list(~na_if(., Inf))) %>% 
   mutate_if(is.factor, list(~na_if(., -Inf)))%>% 
   mutate_if(is.factor, list(~na_if(., "NaN")))
-target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Grass Cover (%)",
+target<-c("Surface Indicator (%)","Foliar Cover (%)","Vegetation Height (cm)","Dominant Graminoid Cover (%)",
           "Dominant Herb. Cover (%)","Dominant Woody Cover (%)","Canopy Gaps (%)","Canopy Cover (%)",
           "Species Richness")
 blank_bold<-formatter("span", 
