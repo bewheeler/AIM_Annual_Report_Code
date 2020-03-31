@@ -430,7 +430,8 @@ SC2+scale_x_discrete(labels= Covers)+scale_color_hue(labels = Covers)+theme(axis
 PSPS1<-PSPSdata[!is.na(PSPSdata$AH_SpeciesCover),]
 
 ##BH STRATA
-##list of dominant species in order of species with highest percent occurence per plot
+##list of dominant species in order of species with highest percent occurence per plot, note this step is only to determine the species
+##present on 20% of the plots in the stratum. Other columns created will be used/modified later in the code
 BHD<- PSPS1 %>%
   select(PrimaryKey,AH_SpeciesCover,Species,Actual.Eco.Site,GrowthHabit) %>%
   group_by(Actual.Eco.Site) %>%
@@ -448,7 +449,7 @@ BH<-BHD %>%
   arrange(desc(SS_avg))
 PSPS3<-BH[!duplicated(BH$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
@@ -507,8 +508,8 @@ MC3<-MC2+facet_grid(.~GrowthHabit, scale = "free", drop= TRUE)+theme(axis.text.x
 MC3 + colScale
 
 ##LB STRATA
-##list of dominant species in order of species with highest percent occurence per plot, first table gives species only on 20% of the plots
-##and lists from greatest cover per plot to least (SS-avg) is average species per plot
+##list of dominant species in order of species with highest percent occurence per plot, note this step is only to determine the species
+##present on 20% of the plots in the stratum. Other columns created will be used/modified later in the code
 LBD<- PSPS1 %>%
   select(PrimaryKey,AH_SpeciesCover,Species,Actual.Eco.Site,GrowthHabit) %>%
   group_by(Actual.Eco.Site) %>%
@@ -526,7 +527,7 @@ LB<- LBD %>%
   arrange(desc(SS_avg))
 PSPS3<-LB[!duplicated(LB$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
@@ -574,7 +575,8 @@ MC3<-MC2+facet_grid(.~GrowthHabit, scale = "free", drop= TRUE)+theme(axis.text.x
 MC3 + colScale
 
 ##LOA STRATA
-##list of dominant species in order of species with highest percent occurence per plot
+##list of dominant species in order of species with highest percent occurence per plot, note this step is only to determine the species
+##present on 20% of the plots in the stratum. Other columns created will be used/modified later in the code
 LOAD<- PSPS1 %>%
   select(PrimaryKey,AH_SpeciesCover,Species,Actual.Eco.Site,GrowthHabit) %>%
   group_by(Actual.Eco.Site) %>%
@@ -592,7 +594,7 @@ LOA<- LOAD %>%
   arrange(desc(SS_avg))
 PSPS3<-LOA[!duplicated(LOA$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
@@ -638,7 +640,8 @@ MC3<-MC2+facet_grid(.~GrowthHabit, scale = "free", drop= TRUE)+theme(axis.text.x
 MC3 + colScale
 
 ##MO STRATA
-##list of dominant species in order of species with highest percent occurence per plot
+##list of dominant species in order of species with highest percent occurence per plot, note this step is only to determine the species
+##present on 20% of the plots in the stratum. Other columns created will be used/modified later in the code
 MOD<- PSPS1 %>%
   select(PrimaryKey,AH_SpeciesCover,Species,Actual.Eco.Site,GrowthHabit) %>%
   group_by(Actual.Eco.Site) %>%
@@ -656,7 +659,7 @@ MO<- MOD %>%
   arrange(desc(SS_avg))
 PSPS3<-MO[!duplicated(MO$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
@@ -702,7 +705,8 @@ MC3<-MC2+facet_grid(.~GrowthHabit, scale = "free", drop= TRUE)+theme(axis.text.x
 MC3 + colScale
 
 ##OTH STRATA
-##list of dominant species in order of species with highest percent occurence per plot
+##list of dominant species in order of species with highest percent occurence per plot, note this step is only to determine the species
+##present on 20% of the plots in the stratum. Other columns created will be used/modified later in the code
 OTHD<- PSPS1 %>%
   select(PrimaryKey,AH_SpeciesCover,Species,Actual.Eco.Site,GrowthHabit) %>%
   group_by(Actual.Eco.Site) %>%
@@ -720,7 +724,7 @@ OTH<- OTHD %>%
   arrange(desc(SS_avg))
 PSPS3<-OTH[!duplicated(OTH$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
@@ -765,7 +769,8 @@ MC3<-MC2+facet_grid(.~GrowthHabit, scale = "free", drop= TRUE)+theme(axis.text.x
 MC3 + colScale
 
 ##ROF STRATA
-##list of dominant species in order of species with highest percent occurence per plot
+##list of dominant species in order of species with highest percent occurence per plot, note this step is only to determine the species
+##present on 20% of the plots in the stratum. Other columns created will be used/modified later in the code
 ROFD<- PSPS1 %>%
   select(PrimaryKey,AH_SpeciesCover,Species,Actual.Eco.Site,GrowthHabit) %>%
   group_by(Actual.Eco.Site) %>%
@@ -783,7 +788,7 @@ ROF<-ROFD %>%
   arrange(desc(SS_avg))
 PSPS3<-ROF[!duplicated(ROF$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
@@ -829,7 +834,8 @@ MC3<-MC2+facet_grid(.~GrowthHabit, scale = "free", drop= TRUE)+theme(axis.text.x
 MC3 + colScale
 
 ##SAL STRATA
-##list of dominant species in order of species with highest percent occurence per plot
+##list of dominant species in order of species with highest percent occurence per plot, note this step is only to determine the species
+##present on 20% of the plots in the stratum. Other columns created will be used/modified later in the code
 SALD<- PSPS1 %>%
   select(PrimaryKey,AH_SpeciesCover,Species,Actual.Eco.Site,GrowthHabit) %>%
   group_by(Actual.Eco.Site) %>%
@@ -847,7 +853,7 @@ SAL<-SALD %>%
   arrange(desc(SS_avg))
 PSPS3<-SAL[!duplicated(SAL$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
@@ -893,7 +899,8 @@ MC3<-MC2+facet_grid(.~GrowthHabit, scale = "free", drop= TRUE)+theme(axis.text.x
 MC3 + colScale
 
 ##SAN STRATA
-##list of dominant species in order of species with highest percent occurence per plot
+##list of dominant species in order of species with highest percent occurence per plot, note this step is only to determine the species
+##present on 20% of the plots in the stratum. Other columns created will be used/modified later in the code
 SAND<- PSPS1 %>%
   select(PrimaryKey,AH_SpeciesCover,Species,Actual.Eco.Site,GrowthHabit) %>%
   group_by(Actual.Eco.Site) %>%
@@ -911,7 +918,7 @@ SAN<-SAND %>%
   arrange(desc(SS_avg))
 PSPS3<-SAN[!duplicated(SAN$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
@@ -975,7 +982,7 @@ FORE<-FORED %>%
   arrange(desc(SS_avg))
 PSPS3<-FORE[!duplicated(FORE$Species),]
 PSPS4<- PSPS3 %>%
-  select(Species,SS_avg)
+  select(Species)
 
 formattable(PSPS4)
 
