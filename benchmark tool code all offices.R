@@ -1,3 +1,7 @@
+#this code is only if you have set benchmarks! see developing benchmarks... code if you do not have set benchmarks. this will produce
+#a table of the percent of plots meeting benchmark per indicator per stratum and a scatterplot of these results which dispays expected
+#range
+
 benchtool<-read.csv("~/Allyears_query_U.csv")
 View(benchtool)
 library(tidyverse)
