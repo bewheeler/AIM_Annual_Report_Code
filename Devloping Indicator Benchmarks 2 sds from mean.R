@@ -1,3 +1,7 @@
+#this code creates benchmarks for all indicators (indicators= baresoil, rock, tree, shrub, soil stability, forb number, forb cover,
+#grass cover, forb height, grass height, succulent, litter, noxious species, nonnoxious species and succulent cover) then produces 
+#tables for indicators met by each plot, percent of plots meeting each indicator by stratum and percent of plots being met by allotment
+
 library(tidyverse)
 library(dplyr)
 library(ggrepel)
