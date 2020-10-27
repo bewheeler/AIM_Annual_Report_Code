@@ -47,7 +47,7 @@ target<-c("BH","LB","LOA","MO","OTH","ROF","SAL","SAN","FORE")
 AIMdata1<-AIMdata %>%
   select(Soil.Stability.All,Actual.Eco.Site) %>%
   group_by(Actual.Eco.Site) %>%
-  mutate(avg_soil_stability=mean(Soil.Stability.All)) %>%
+  mutate(avg_soil_stability=mean(na.omit(Soil.Stability.All))) %>%
   arrange(desc(avg_soil_stability))
 AIMdata1<-AIMdata1[!duplicated(AIMdata1$avg_soil_stability),]
 AIMdataSS<-AIMdata1 %>%
