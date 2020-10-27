@@ -238,25 +238,24 @@ FORE<-subset(AIMdata1,Actual.Eco.Site=="FORE")
 
 #BH
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(BH$Soil.Stability.All),digits=2),round(mean(BH$Soil.Stability.Protected),digits=2),round(mean(BH$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(BH$Soil.Stability.All),digits=2),round(min(BH$Soil.Stability.Protected),digits=2),round(min(BH$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(BH$Soil.Stability.All),digits=2),round(max(BH$Soil.Stability.Protected),digits=2),round(max(BH$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(BH$Soil.Stability.All),digits=2),round(sd(BH$Soil.Stability.Protected),digits=2),round(sd(BH$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(BH$Soil.Stability.All)/BHN2),digits=2),round(1.282*(sd(BH$Soil.Stability.Protected)/BHN2),digits=2),round(1.282*(sd(BH$Soil.Stability.Unprotected)/BHN2),digits=2))
+Mean<-c(round(mean(na.omit(BH$Soil.Stability.All)),digits=2),round(mean(na.omit(BH$Soil.Stability.Protected)),digits=2),round(mean(na.omit(BH$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(BH$Soil.Stability.All)),digits=2),round(min(na.omit(BH$Soil.Stability.Protected)),digits=2),round(min(na.omit(BH$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(BH$Soil.Stability.All)),digits=2),round(max(na.omit(BH$Soil.Stability.Protected)),digits=2),round(max(na.omit(BH$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(BH$Soil.Stability.All)),digits=2),round(sd(na.omit(BH$Soil.Stability.Protected)),digits=2),round(sd(na.omit(BH$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(BH$Soil.Stability.All)/BHN2)),digits=2),round(1.282*(sd(na.omit(BH$Soil.Stability.Protected)/BHN2)),digits=2),round(1.282*(sd(na.omit(BH$Soil.Stability.Unprotected)/BHN2)),digits=2))
 BHdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
 formattable(BHdataframe, list(
   Type = blank_bold))
 
-
 #LB
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(LB$Soil.Stability.All),digits=2),round(mean(LB$Soil.Stability.Protected),digits=2),round(mean(LB$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(LB$Soil.Stability.All),digits=2),round(min(LB$Soil.Stability.Protected),digits=2),round(min(LB$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(LB$Soil.Stability.All),digits=2),round(max(LB$Soil.Stability.Protected),digits=2),round(max(LB$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(LB$Soil.Stability.All),digits=2),round(sd(LB$Soil.Stability.Protected),digits=2),round(sd(LB$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(LB$Soil.Stability.All)/LBN2),digits=2),round(1.282*(sd(LB$Soil.Stability.Protected)/LBN2),digits=2),round(1.282*(sd(LB$Soil.Stability.Unprotected)/LBN2),digits=2))
+Mean<-c(round(mean(na.omit(LB$Soil.Stability.All)),digits=2),round(mean(na.omit(LB$Soil.Stability.Protected)),digits=2),round(mean(na.omit(LB$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(LB$Soil.Stability.All)),digits=2),round(min(na.omit(LB$Soil.Stability.Protected)),digits=2),round(min(na.omit(LB$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(LB$Soil.Stability.All)),digits=2),round(max(na.omit(LB$Soil.Stability.Protected)),digits=2),round(max(na.omit(LB$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(LB$Soil.Stability.All)),digits=2),round(sd(na.omit(LB$Soil.Stability.Protected)),digits=2),round(sd(na.omit(LB$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(LB$Soil.Stability.All)/LBN2)),digits=2),round(1.282*(sd(na.omit(LB$Soil.Stability.Protected)/LBN2)),digits=2),round(1.282*(sd(na.omit(LB$Soil.Stability.Unprotected)/LBN2)),digits=2))
 LBdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
@@ -265,25 +264,24 @@ formattable(LBdataframe, list(
 
 #LOA
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(LOA$Soil.Stability.All),digits=2),round(mean(LOA$Soil.Stability.Protected),digits=2),round(mean(LOA$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(LOA$Soil.Stability.All),digits=2),round(min(LOA$Soil.Stability.Protected),digits=2),round(min(LOA$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(LOA$Soil.Stability.All),digits=2),round(max(LOA$Soil.Stability.Protected),digits=2),round(max(LOA$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(LOA$Soil.Stability.All),digits=2),round(sd(LOA$Soil.Stability.Protected),digits=2),round(sd(LOA$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(LOA$Soil.Stability.All)/LOAN2),digits=2),round(1.282*(sd(LOA$Soil.Stability.Protected)/LOAN2),digits=2),round(1.282*(sd(LOA$Soil.Stability.Unprotected)/LOAN2),digits=2))
+Mean<-c(round(mean(na.omit(LOA$Soil.Stability.All)),digits=2),round(mean(na.omit(LOA$Soil.Stability.Protected)),digits=2),round(mean(na.omit(LOA$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(LOA$Soil.Stability.All)),digits=2),round(min(na.omit(LOA$Soil.Stability.Protected)),digits=2),round(min(na.omit(LOA$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(LOA$Soil.Stability.All)),digits=2),round(max(na.omit(LOA$Soil.Stability.Protected)),digits=2),round(max(na.omit(LOA$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(LOA$Soil.Stability.All)),digits=2),round(sd(na.omit(LOA$Soil.Stability.Protected)),digits=2),round(sd(na.omit(LOA$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(LOA$Soil.Stability.All)/LOAN2)),digits=2),round(1.282*(sd(na.omit(LOA$Soil.Stability.Protected)/LOAN2)),digits=2),round(1.282*(sd(na.omit(LOA$Soil.Stability.Unprotected)/LOAN2)),digits=2))
 LOAdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
 formattable(LOAdataframe, list(
   Type = blank_bold))
 
-
 #MO
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(MO$Soil.Stability.All),digits=2),round(mean(MO$Soil.Stability.Protected),digits=2),round(mean(MO$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(MO$Soil.Stability.All),digits=2),round(min(MO$Soil.Stability.Protected),digits=2),round(min(MO$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(MO$Soil.Stability.All),digits=2),round(max(MO$Soil.Stability.Protected),digits=2),round(max(MO$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(MO$Soil.Stability.All),digits=2),round(sd(MO$Soil.Stability.Protected),digits=2),round(sd(MO$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(MO$Soil.Stability.All)/MON2),digits=2),round(1.282*(sd(MO$Soil.Stability.Protected)/MON2),digits=2),round(1.282*(sd(MO$Soil.Stability.Unprotected)/MON2),digits=2))
+Mean<-c(round(mean(na.omit(MO$Soil.Stability.All)),digits=2),round(mean(na.omit(MO$Soil.Stability.Protected)),digits=2),round(mean(na.omit(MO$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(MO$Soil.Stability.All)),digits=2),round(min(na.omit(MO$Soil.Stability.Protected)),digits=2),round(min(na.omit(MO$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(MO$Soil.Stability.All)),digits=2),round(max(na.omit(MO$Soil.Stability.Protected)),digits=2),round(max(na.omit(MO$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(MO$Soil.Stability.All)),digits=2),round(sd(na.omit(MO$Soil.Stability.Protected)),digits=2),round(sd(na.omit(MO$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(MO$Soil.Stability.All)/MON2)),digits=2),round(1.282*(sd(na.omit(MO$Soil.Stability.Protected)/MON2)),digits=2),round(1.282*(sd(na.omit(MO$Soil.Stability.Unprotected)/MON2)),digits=2))
 MOdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
@@ -292,11 +290,11 @@ formattable(MOdataframe, list(
 
 #OTH
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(OTH$Soil.Stability.All),digits=2),round(mean(OTH$Soil.Stability.Protected),digits=2),round(mean(OTH$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(OTH$Soil.Stability.All),digits=2),round(min(OTH$Soil.Stability.Protected),digits=2),round(min(OTH$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(OTH$Soil.Stability.All),digits=2),round(max(OTH$Soil.Stability.Protected),digits=2),round(max(OTH$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(OTH$Soil.Stability.All),digits=2),round(sd(OTH$Soil.Stability.Protected),digits=2),round(sd(OTH$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(OTH$Soil.Stability.All)/OTHN2),digits=2),round(1.282*(sd(OTH$Soil.Stability.Protected)/OTHN2),digits=2),round(1.282*(sd(OTH$Soil.Stability.Unprotected)/OTHN2),digits=2))
+Mean<-c(round(mean(na.omit(OTH$Soil.Stability.All)),digits=2),round(mean(na.omit(OTH$Soil.Stability.Protected)),digits=2),round(mean(na.omit(OTH$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(OTH$Soil.Stability.All)),digits=2),round(min(na.omit(OTH$Soil.Stability.Protected)),digits=2),round(min(na.omit(OTH$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(OTH$Soil.Stability.All)),digits=2),round(max(na.omit(OTH$Soil.Stability.Protected)),digits=2),round(max(na.omit(OTH$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(OTH$Soil.Stability.All)),digits=2),round(sd(na.omit(OTH$Soil.Stability.Protected)),digits=2),round(sd(na.omit(OTH$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(OTH$Soil.Stability.All)/OTHN2)),digits=2),round(1.282*(sd(na.omit(OTH$Soil.Stability.Protected)/OTHN2)),digits=2),round(1.282*(sd(na.omit(OTH$Soil.Stability.Unprotected)/OTHN2)),digits=2))
 OTHdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
@@ -305,11 +303,11 @@ formattable(OTHdataframe, list(
 
 #ROF
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(ROF$Soil.Stability.All),digits=2),round(mean(ROF$Soil.Stability.Protected),digits=2),round(mean(ROF$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(ROF$Soil.Stability.All),digits=2),round(min(ROF$Soil.Stability.Protected),digits=2),round(min(ROF$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(ROF$Soil.Stability.All),digits=2),round(max(ROF$Soil.Stability.Protected),digits=2),round(max(ROF$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(ROF$Soil.Stability.All),digits=2),round(sd(ROF$Soil.Stability.Protected),digits=2),round(sd(ROF$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(ROF$Soil.Stability.All)/ROFN2),digits=2),round(1.282*(sd(ROF$Soil.Stability.Protected)/ROFN2),digits=2),round(1.282*(sd(ROF$Soil.Stability.Unprotected)/ROFN2),digits=2))
+Mean<-c(round(mean(na.omit(ROF$Soil.Stability.All)),digits=2),round(mean(na.omit(ROF$Soil.Stability.Protected)),digits=2),round(mean(na.omit(ROF$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(ROF$Soil.Stability.All)),digits=2),round(min(na.omit(ROF$Soil.Stability.Protected)),digits=2),round(min(na.omit(ROF$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(ROF$Soil.Stability.All)),digits=2),round(max(na.omit(ROF$Soil.Stability.Protected)),digits=2),round(max(na.omit(ROF$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(ROF$Soil.Stability.All)),digits=2),round(sd(na.omit(ROF$Soil.Stability.Protected)),digits=2),round(sd(na.omit(ROF$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(ROF$Soil.Stability.All)/ROFN2)),digits=2),round(1.282*(sd(na.omit(ROF$Soil.Stability.Protected)/ROFN2)),digits=2),round(1.282*(sd(na.omit(ROF$Soil.Stability.Unprotected)/ROFN2)),digits=2))
 ROFdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
@@ -318,11 +316,11 @@ formattable(ROFdataframe, list(
 
 #SAL
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(SAL$Soil.Stability.All),digits=2),round(mean(SAL$Soil.Stability.Protected),digits=2),round(mean(SAL$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(SAL$Soil.Stability.All),digits=2),round(min(SAL$Soil.Stability.Protected),digits=2),round(min(SAL$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(SAL$Soil.Stability.All),digits=2),round(max(SAL$Soil.Stability.Protected),digits=2),round(max(SAL$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(SAL$Soil.Stability.All),digits=2),round(sd(SAL$Soil.Stability.Protected),digits=2),round(sd(SAL$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(SAL$Soil.Stability.All)/SALN2),digits=2),round(1.282*(sd(SAL$Soil.Stability.Protected)/SALN2),digits=2),round(1.282*(sd(SAL$Soil.Stability.Unprotected)/SALN2),digits=2))
+Mean<-c(round(mean(na.omit(SAL$Soil.Stability.All)),digits=2),round(mean(na.omit(SAL$Soil.Stability.Protected)),digits=2),round(mean(na.omit(SAL$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(SAL$Soil.Stability.All)),digits=2),round(min(na.omit(SAL$Soil.Stability.Protected)),digits=2),round(min(na.omit(SAL$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(SAL$Soil.Stability.All)),digits=2),round(max(na.omit(SAL$Soil.Stability.Protected)),digits=2),round(max(na.omit(SAL$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(SAL$Soil.Stability.All)),digits=2),round(sd(na.omit(SAL$Soil.Stability.Protected)),digits=2),round(sd(na.omit(SAL$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(SAL$Soil.Stability.All)/SALN2)),digits=2),round(1.282*(sd(na.omit(SAL$Soil.Stability.Protected)/SALN2)),digits=2),round(1.282*(sd(na.omit(SAL$Soil.Stability.Unprotected)/SALN2)),digits=2))
 SALdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
@@ -331,11 +329,11 @@ formattable(SALdataframe, list(
 
 #SAN
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(SAN$Soil.Stability.All),digits=2),round(mean(SAN$Soil.Stability.Protected),digits=2),round(mean(SAN$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(SAN$Soil.Stability.All),digits=2),round(min(SAN$Soil.Stability.Protected),digits=2),round(min(SAN$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(SAN$Soil.Stability.All),digits=2),round(max(SAN$Soil.Stability.Protected),digits=2),round(max(SAN$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(SAN$Soil.Stability.All),digits=2),round(sd(SAN$Soil.Stability.Protected),digits=2),round(sd(SAN$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(SAN$Soil.Stability.All)/SANN2),digits=2),round(1.282*(sd(SAN$Soil.Stability.Protected)/SANN2),digits=2),round(1.282*(sd(SAN$Soil.Stability.Unprotected)/SANN2),digits=2))
+Mean<-c(round(mean(na.omit(SAN$Soil.Stability.All)),digits=2),round(mean(na.omit(SAN$Soil.Stability.Protected)),digits=2),round(mean(na.omit(SAN$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(SAN$Soil.Stability.All)),digits=2),round(min(na.omit(SAN$Soil.Stability.Protected)),digits=2),round(min(na.omit(SAN$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(SAN$Soil.Stability.All)),digits=2),round(max(na.omit(SAN$Soil.Stability.Protected)),digits=2),round(max(na.omit(SAN$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(SAN$Soil.Stability.All)),digits=2),round(sd(na.omit(SAN$Soil.Stability.Protected)),digits=2),round(sd(na.omit(SAN$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(SAN$Soil.Stability.All)/SANN2)),digits=2),round(1.282*(sd(na.omit(SAN$Soil.Stability.Protected)/SANN2)),digits=2),round(1.282*(sd(na.omit(SAN$Soil.Stability.Unprotected)/SANN2)),digits=2))
 SANdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
@@ -344,16 +342,18 @@ formattable(SANdataframe, list(
 
 #FORE
 Type<-c("All Samples","Under Plant Cover","No Cover")
-Mean<-c(round(mean(FORE$Soil.Stability.All),digits=2),round(mean(FORE$Soil.Stability.Protected),digits=2),round(mean(FORE$Soil.Stability.Unprotected),digits=2))
-Minimum<-c(round(min(FORE$Soil.Stability.All),digits=2),round(min(FORE$Soil.Stability.Protected),digits=2),round(min(FORE$Soil.Stability.Unprotected),digits=2))
-Maximum<-c(round(max(FORE$Soil.Stability.All),digits=2),round(max(FORE$Soil.Stability.Protected),digits=2),round(max(FORE$Soil.Stability.Unprotected),digits=2))
-St.Dev.<-c(round(sd(FORE$Soil.Stability.All),digits=2),round(sd(FORE$Soil.Stability.Protected),digits=2),round(sd(FORE$Soil.Stability.Unprotected),digits=2))
-ME<-c(round(1.282*(sd(FORE$Soil.Stability.All)/FOREN2),digits=2),round(1.282*(sd(FORE$Soil.Stability.Protected)/FOREN2),digits=2),round(1.282*(sd(FORE$Soil.Stability.Unprotected)/FOREN2),digits=2))
+Mean<-c(round(mean(na.omit(FORE$Soil.Stability.All)),digits=2),round(mean(na.omit(FORE$Soil.Stability.Protected)),digits=2),round(mean(na.omit(FORE$Soil.Stability.Unprotected)),digits=2))
+Minimum<-c(round(min(na.omit(FORE$Soil.Stability.All)),digits=2),round(min(na.omit(FORE$Soil.Stability.Protected)),digits=2),round(min(na.omit(FORE$Soil.Stability.Unprotected)),digits=2))
+Maximum<-c(round(max(na.omit(FORE$Soil.Stability.All)),digits=2),round(max(na.omit(FORE$Soil.Stability.Protected)),digits=2),round(max(na.omit(FORE$Soil.Stability.Unprotected)),digits=2))
+St.Dev.<-c(round(sd(na.omit(FORE$Soil.Stability.All)),digits=2),round(sd(na.omit(FORE$Soil.Stability.Protected)),digits=2),round(sd(na.omit(FORE$Soil.Stability.Unprotected)),digits=2))
+ME<-c(round(1.282*(sd(na.omit(FORE$Soil.Stability.All)/FOREN2)),digits=2),round(1.282*(sd(na.omit(FORE$Soil.Stability.Protected)/FOREN2)),digits=2),round(1.282*(sd(na.omit(FORE$Soil.Stability.Unprotected)/FOREN2)),digits=2))
 FOREdataframe<-data.frame(Type,Mean,Minimum,Maximum,ME)
 blank_bold<-formatter("span", 
                       style = x ~ style("font-weight" = ifelse(x == Type, "bold", NA)))
 formattable(FOREdataframe, list(
   Type = blank_bold))
+
+
 
 #calculating surface cover
 
